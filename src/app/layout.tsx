@@ -8,6 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://teamlite.netlify.app'),
   title: "TeamLite Soft Solutions | Engineering Intelligent Software for the Future",
   description: "Empower businesses through intelligent software, AI-driven automation, secure cloud infrastructure, and scalable digital transformation. Founded by Shubham Kumar.",
   keywords: [
