@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  
+  --color-background: #050816;
+  --color-foreground: #ffffff;
+  
+  --color-primary: #2563EB;
+  --color-primary-foreground: #ffffff;
+  
+  --color-secondary: #7C3AED;
+  --color-secondary-foreground: #ffffff;
+  
+  --color-accent: #06B6D4;
+  --color-accent-foreground: #ffffff;
+  
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  
+  --color-muted: #1e2335;
+  --color-muted-foreground: #a1a1aa;
+  
+  --color-border: #1e293b;
+  --color-input: #1e293b;
+  --color-ring: #2563EB;
+  
+  --color-card: rgba(5, 8, 22, 0.7);
+  --color-card-foreground: #ffffff;
+  
+  --radius-lg: 18px;
+  --radius-md: calc(18px - 2px);
+  --radius-sm: calc(18px - 4px);
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  button, a, [role="button"], [tabindex="0"] {
+    cursor: pointer !important;
+  }
+}
+
+/* Utilities for glassmorphism and custom effects */
+@layer utilities {
+  .glass {
+    @apply bg-card backdrop-blur-xl border border-white/10 rounded-[18px] shadow-2xl;
+  }
+  
+  .aurora-bg {
+    background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at center, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+}
+
+/* Custom Scrollbar for Mega Menus */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hide Google Translate Toolbar & Popups */
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body {
+    top: 0px !important; 
+}
+#goog-gt-tt {
+    display: none !important;
+    visibility: hidden !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Light Mode Magic Invert */
+html.light {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Prevent images, videos, and specific elements from being inverted */
+html.light img, 
+html.light video, 
+html.light .no-invert {
+  filter: invert(1) hue-rotate(180deg);
+}
