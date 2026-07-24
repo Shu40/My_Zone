@@ -64,12 +64,18 @@ export default function Home() {
             </motion.div>
             
             {/* Main Headline */}
-            <h1 className="text-6xl md:text-7xl lg:text-[5rem] font-extrabold leading-[1.05] tracking-tighter text-white">
-              Engineering the <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">
-                Future of Software.
-              </span>
-            </h1>
+            <div className="flex flex-col mb-4">
+              <h2 className="text-lg md:text-xl font-medium text-primary mb-3 tracking-wide uppercase flex items-center gap-3">
+                <span className="w-8 h-[2px] bg-primary rounded-full"></span>
+                Explore Ideas with TeamLite
+              </h2>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tighter text-white">
+                Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-primary to-indigo-500 italic">"GO-TO"</span> <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">
+                  Technology Partner.
+                </span>
+              </h1>
+            </div>
             
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed font-light">
               We design, build, and scale enterprise-grade digital products. From secure cloud infrastructure to autonomous AI agents, we deliver technology that powers industry leaders.

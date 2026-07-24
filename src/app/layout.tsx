@@ -17,15 +17,23 @@ export const metadata: Metadata = {
     "Cloud Infrastructure",
     "Cybersecurity",
     "Shubham Kumar",
+    "Mayur Girase",
     "TeamLite Soft Solutions",
     "SaaS Product Development",
     "Custom Software Development",
+    "Enterprise SEO",
+    "B2B Software Solutions",
+    "Digital Transformation",
+    "Scalable Cloud Architecture",
+    "AI-driven Software Engineering",
+    "Tech Startups India",
+    "IT Consulting Services",
   ],
-  authors: [{ name: "Shubham Kumar" }],
+  authors: [{ name: "Shubham Kumar" }, { name: "Mayur Girase" }],
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo.png?v=2",
+    shortcut: "/logo.png?v=2",
+    apple: "/logo.png?v=2",
   },
   openGraph: {
     title: "TeamLite Soft Solutions",
@@ -66,6 +74,11 @@ const jsonLd = {
       "@type": "Person",
       "name": "Shubham Kumar"
     },
+    "employee": {
+      "@type": "Person",
+      "name": "Mayur Girase",
+      "jobTitle": "Co-Founder & CTO"
+    },
     "foundingLocation": {
       "@type": "Place",
       "address": {
@@ -91,6 +104,26 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark h-full antialiased" suppressHydrationWarning>
       <head>
+        {/* Google Analytics (GA4) Hook */}
+        {/* <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" /> */}
+        {/* <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script> */}
+        {/* Google Tag Manager Hook */}
+        {/* <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-XXXXXXX');
+          `}
+        </Script> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
