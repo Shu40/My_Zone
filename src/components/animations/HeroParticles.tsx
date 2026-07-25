@@ -1,28 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useCallback } from "react";
+import Particles, { ParticlesProvider } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { Engine } from "@tsparticles/engine";
 
 export default function HeroParticles() {
-  const [init, setInit] = useState(false);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine: Engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine);
   }, []);
 
-  if (!init) {
-    return null;
-  }
-
   return (
-    <Particles
-      id="tsparticles"
+    <ParticlesProvider init={particlesInit}>
+      <Particles
+        id="tsparticles"
       className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none"
       options={{
         fpsLimit: 60,
@@ -84,5 +75,6 @@ export default function HeroParticles() {
         detectRetina: true,
       }}
     />
+    </ParticlesProvider>
   );
 }
